@@ -1,12 +1,19 @@
-from models.PlayerModel import PlayerModel
+from tinydb.table import Document
 
 
 class PlayerView:
     def __init__(self):
         pass
 
-    def show_players(self, players) -> None:
+    def list_players(self, players:list[Document]) -> None:
         for player in players:
-            print(f"Prénom : {player['first_name']}")
-            print(f"nom : {player['last_name']}")
-            print(f"nom : {player['elo_points']}")
+            print(f"ID : { player['id'] }")
+            print(f"Prénom : { player['first_name'] }")
+            print(f"Nom : { player['last_name'] }")
+            print(f"Points d'Elo : { player['elo_points'] }")
+
+    def show_player(self, player:Document) -> None:
+        print(f"ID : { player['id'] }")
+        print(f"Prénom : { player['first_name'] }")
+        print(f"Nom : { player['last_name'] }")
+        print(f"Points d'Elo : { player['elo_points'] }")

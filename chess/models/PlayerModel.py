@@ -10,6 +10,11 @@ class PlayerModel:
     def get_players():
         db = TinyDB('db/db.json')
         return db.table('players').all()
+
+    @staticmethod
+    def get_player_by_id(id:int):
+        db = TinyDB('db/db.json')
+        return db.table('players')[id - 1]
         
 
 

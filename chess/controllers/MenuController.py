@@ -8,4 +8,4 @@ class MenuController:
 
     def menu(self):
         MenuView().show_menu()
-        input()
+        return int(input())
