@@ -1,4 +1,6 @@
 from controllers.PlayerController import PlayerController
+from controllers.TournamentController import TournamentController
+from controllers.MenuController import MenuController
 
 class Console:
     def __init__(self) -> None:
@@ -12,3 +14,9 @@ class Console:
 
         if menu_input == 3:
             PlayerController.index()
+
+        if menu_input == 5:
+            TournamentController.create()
+
+        if menu_input == 6:
+            MenuController.exit()

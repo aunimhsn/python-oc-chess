@@ -1,4 +1,6 @@
 from views.MenuView import MenuView
+import sys
+from db.seeders.DatabaseSeeder import DatabaseSeeder
 
 
 class MenuController:
@@ -9,3 +11,7 @@ class MenuController:
     def menu(self):
         MenuView().show_menu()
         return int(input())
+
+    def exit(self):
+        DatabaseSeeder().clear()
+        sys.exit()
